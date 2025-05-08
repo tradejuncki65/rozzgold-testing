@@ -1,1 +1,51 @@
-<!-- dashboard.html placeholder -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RozGold Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f6fa;
+      padding: 30px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #c49b12;
+    }
+    p {
+      line-height: 1.6;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #444;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Welcome to Your RozGold Dashboard</h2>
+    <p><span class="highlight">Wallet Address:</span> {{ user.wallet }}</p>
+    <p><span class="highlight">Referral Code:</span> {{ user.referral_code }}</p>
+    <p><span class="highlight">Tokens Earned:</span> {{ user.tokens }}</p>
+    <p><span class="highlight">Referred Users:</span> {{ user.referred_users }}</p>
+    <p><span class="highlight">Contract Start Date:</span> {{ user.start_date }}</p>
+    <p><span class="highlight">Contract End Date:</span> {{ user.end_date }}</p>
+
+    <h3>Your Referral Link</h3>
+    <input type="text" readonly value="https://rozgold.com/referral/{{ user.referral_code }}" />
+  </div>
+</body>
+</html>
