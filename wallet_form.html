@@ -1,1 +1,43 @@
-<!-- wallet_form.html placeholder -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Connect Wallet – RozGold</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: #eef2f7;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 400px;
+      margin: auto;
+    }
+    input[type="text"], input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <h2>Connect Your Wallet</h2>
+  <form method="POST" action="/dashboard">
+    <label for="wallet">USDT Wallet Address (TRC20):</label>
+    <input type="text" name="wallet" required />
+
+    <label for="referral">Referral Code (optional):</label>
+    <input type="text" name="referral" placeholder="Enter referral code" />
+
+    <input type="submit" value="Join Now" />
+  </form>
+
+  {% if ref_code %}
+    <p>You are joining with referral code: <strong>{{ ref_code }}</strong></p>
+  {% endif %}
+</body>
+</html>
